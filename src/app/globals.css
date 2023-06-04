@@ -3,25 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --purple-gradient: linear-gradient(90deg, #c610c6 0%, #30a6ef 100%);
+  --border-gradient-color-1: "#8B5CF6";
+  --border-gradient-color-2: "#EC4899";
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #12062D;
+}
+
+.nav-option:hover {
+    margin-inline-start: 0em;
+    margin-inline-end: 0.1em;
+  }
+
+
+.purple-gradient{
+    @apply bg-gradient-to-r from-purple-600 to-blue-500;
+} 
+
+.image-border:hover{
+  @apply bg-gradient-to-r from-purple-600 to-blue-500;
+}
+
+/* .image-nav {
+  @apply overflow-hidden relative;
+  /* overflow: hidden; */
+  /* position: relative; */
+
+.image-nav img {
+  transition: transform 0.3s;
+}
+
+.image-nav:hover{
+  transform: scale(1.1); /* Adjust the scale factor as per your preference */
+}
+
+
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  border: 4px solid transparent;
+  transition: border-color 0.3s;
+  pointer-events: none;
+}
+
+.image-container:hover::before {
+  border-image: var(--purple-gradient) 1;
+  border-image-slice: 2;
+  border-color: transparent;
 }
