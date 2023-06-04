@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 
@@ -9,6 +9,23 @@ const Navbar = () => {
     const [showSubMenu, setShowSubMenu] = useState(false);
     const spanRef = useRef(null);
     const ulRef = useRef(null);
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 0) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
 
   const handleSpanMouseEnter = () => {
     setShowSubMenu(true);
@@ -37,8 +54,11 @@ const Navbar = () => {
   return (
     <header>
         <div className='px-8 pt-2 py-1 flex flex-row items-center justify-end text-white'>
-            <BiSearchAlt2 size={'25px'} />
+            <BiSearchAlt2 size={'20px'} />
         </div>
+        <div className={`flex flex-col fixed w-full ${isScrolled? ' top-0 ' : ' top-8 ' } z-50`}>
+            
+     
         <nav className='px-8 bg-white flex flex-row items-center justify-between'>
             <div className='flex flex-row gap-11 items-center '>
                 <Link href={'/'}>
@@ -142,6 +162,7 @@ const Navbar = () => {
             </li>
         </ul>
 }
+    </div>
     </header>
   )
 }

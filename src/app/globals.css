@@ -19,17 +19,27 @@ body {
 
 
 .purple-gradient{
-    @apply bg-gradient-to-r from-purple-600 to-blue-500;
+    /* @apply bg-gradient-to-r from-purple-600 to-blue-500; */
+    background: var(--purple-gradient);
 } 
+
+.switch-purpleGrad{
+  background: var(--purple-gradient);
+  transition: background-color 0.3s;
+  z-index: 999;
+}
+
+.switch-purpleGrad:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #30a6ef 0%, #c610c6 100%);
+  z-index: 999;
+}
 
 .image-border:hover{
   @apply bg-gradient-to-r from-purple-600 to-blue-500;
 }
 
-/* .image-nav {
-  @apply overflow-hidden relative;
-  /* overflow: hidden; */
-  /* position: relative; */
+
 
 .image-nav img {
   transition: transform 0.3s;
@@ -65,3 +75,7 @@ body {
   border-image-slice: 2;
   border-color: transparent;
 }
+
+/* .sliderWrapper .global .slick-list .slick-track{
+  @apply my-[0] mx-[0];
+} */
