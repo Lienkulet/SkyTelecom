@@ -8,7 +8,7 @@ import { HiOutlineUserGroup } from 'react-icons/hi'
 
 const SubHero = () => {
   return (
-    <section className='flex flex-wrap items-center justify-center px-auto py-4 gap-10 group'>
+    <section className='flex flex-wrap items-center justify-center px-auto py-4 gap-10 mt-11'>
         <Link href={'/'} className='flex flex-col items-start justify-start text-white 
                     font-medium text-xs gap-1 min-w-[145px] min-h-[27px] cursor-default custom-link'>
 

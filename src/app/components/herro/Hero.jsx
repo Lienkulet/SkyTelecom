@@ -28,6 +28,7 @@ const Hero = () => {
     <section className="relative overflow-hidden max-w-full">
       {/* <div className="relative"> */}
       <h1>Ale</h1>
+      <div className='hidden md:block'>
         <Slider {...settings} ref={sliderRef}>
           <figure className="relative ease-in-out duration-500">
             <Image 
@@ -430,8 +431,87 @@ const Hero = () => {
                 </aside>
           </figure>
         </Slider>
+      </div>
 
-        <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
+      <div className='block md:hidden pt-10'>
+        <Slider {...settings} ref={sliderRef}>
+          <figure className="relative ease-in-out duration-500">
+            <Image 
+              src="/01_mobile.jpg" 
+              alt="01_mobile" 
+              width={1900} 
+              height={831} />
+              <figcaption className='heroDescCaption absolute top-4 z-9 left-0 right-0 flex 
+                flex-col text-white items-center justify-center text-center'>
+                <h1 
+                  className='font-medium text-2xl mb-2'
+                  >Home, Business & Professional
+                </h1>
+                <p className='font-regular text-center text-base max-w-[320px] mb-2'>
+                  Άλλαξε την καθημερινότητά σου, με ταχύτητες Internet έως και 
+                  <strong>1GBPS</strong>
+                    !
+                  Βρες το πρόγραμμα που σου ταιριάζει από 17,90€ και σέρφαρε απεριόριστα!
+                </p>
+                <button className='
+                  px-[3.3rem] py-[0.95rem] items-center z-8 font-regular text-xs font-medium
+                  text-center rounded-sm cursor-pointer switch-purpleGrad mt-52
+                  '>Ανακάλυψέ τα</button>
+              </figcaption>
+              
+          </figure>
+          <figure className="relative ease-in-out duration-500">
+            <Image 
+              src="/02_mobile.jpg" 
+              alt="02_mobile" 
+              width={1900} 
+              height={831} />
+              <figcaption className='heroDescCaption absolute top-4 z-9 left-0 right-0 flex 
+                flex-col text-white items-center justify-center text-center'>
+                <h1 
+                  className='font-medium text-2xl mb-2'
+                  >Ακόμα ψάχνεις;
+                </h1>
+                <p className='font-regular text-center text-base mb-2 max-w-[320px]'>
+                Με την TRY&BUY υπηρεσία της SkyTelecom δοκιμάζεις το 
+                πρόγραμμα που σου ταιριάζει
+                    <br />
+                    εντελώς ΔΩΡΕΑΝ,  χωρίς καμία δέσμευση αγοράς!
+                </p>
+                <button className='
+                px-[2.5rem] py-[0.90rem] items-center z-8 font-regular text-xs font-medium
+                text-center rounded-sm cursor-pointer switch-purpleGrad mt-52
+                  '>Κάνε αίτηση τώρα</button>
+              </figcaption>
+              
+          </figure>
+
+          <figure className="relative ease-in-out duration-500">
+            <Image 
+              src="/03_mobile.jpg" 
+              alt="03_mobile" 
+              width={1900} 
+              height={831} />
+              <figcaption className='heroDescCaption absolute top-4 z-9 left-0 right-0 flex 
+                flex-col text-white items-center justify-center text-center'>
+                <h3 className='font-regular font-medium text-left text-xl'>ΜΟΝΟ ΓΙΑ ΕΣΕΝΑ!</h3>
+                <h1 
+                  className='font-medium text-2xl mb-2'
+                  >MESH WIFI ROUTER με <br /> 29,90€/τμχ!
+                </h1>
+                <p className='font-regular text-center text-base mb-2 max-w-[360px]'>
+                  Καλά διάβασες! Γίνε και εσύ μέλος της οικογένειας της SkyTelecom για να απολαμβάνεις
+                  μοναδικά προνόμια!
+                </p>
+                <button className='px-[3.4rem] py-[0.90rem] items-center z-8 font-regular text-xs font-medium
+                 text-center rounded-sm cursor-pointer switch-purpleGrad mt-36
+                  '>Απόκτησέ το</button>
+              </figcaption>
+          </figure>
+        </Slider>
+      </div>
+
+        <div className="md:flex hidden absolute top-1/2 left-2 transform -translate-y-1/2">
           <div className="flex flex-col items-center gap-3">
             <div className={`rounded-full bg-cover cursor-pointer`} onClick={() => changeSlide(0)}>
               <Image src="/heroRound.png" alt="heroRound" width={37} height={45} className={`rounded-full bg-cover cursor-pointer `} />
