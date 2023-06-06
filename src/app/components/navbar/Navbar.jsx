@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
-import { BiSearchAlt2 } from 'react-icons/bi'
+import { BiSearch } from 'react-icons/bi'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 
 const Navbar = () => {
@@ -53,10 +53,10 @@ const Navbar = () => {
   };
   return (
     <header>
-        <div className='px-8 pt-2 py-1 flex flex-row items-center justify-end text-white'>
-            <BiSearchAlt2 size={'20px'} />
+        <div className='px-8 pt-2 flex flex-row items-center justify-end text-white'>
+            <BiSearch size={'1.2rem'} />
         </div>
-        <div className={`flex flex-col fixed w-full ${isScrolled? ' top-0 ' : ' top-8 ' } z-50`}>
+        <div className={`flex flex-col fixed w-full ${isScrolled? ' top-0 ' : ' top-7 ' } z-50`}>
             
      
         <nav className='px-8 bg-white flex flex-row items-center justify-between'>

@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
   const sliderRef = useRef(null);
@@ -10,8 +11,9 @@ const Hero = () => {
   const settings = {
     dots: false,
     infinite: true,
+    lazyLoad: true,
     fade: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (current, next) => setActiveSlide(next),
@@ -23,16 +25,17 @@ const Hero = () => {
   };
 
   return (
-    <section className="text-red sliderWrapper overflow-hidden max-w-full mt-14">
-      <div className="relative">
+    <section className="relative overflow-hidden max-w-full">
+      {/* <div className="relative"> */}
+      <h1>Ale</h1>
         <Slider {...settings} ref={sliderRef}>
-          <figure className="relative">
+          <figure className="relative ease-in-out duration-500">
             <Image 
               src="/homebanners.jpg" 
               alt="homebanners" 
               width={1900} 
               height={831} />
-              <figcaption className='absolute top-[65%] z-9 left-36 flex flex-col text-white items-start'>
+              <figcaption className='heroDescCaption absolute top-[65%] z-9 left-36 flex flex-col text-white items-start'>
                 <h1 
                   className='font-medium text-4xl mb-2'
                   >Home, Business & Professional
@@ -44,40 +47,406 @@ const Hero = () => {
                     <br />
                   Βρες το πρόγραμμα που σου ταιριάζει από 17,90€ και σέρφαρε απεριόριστα!
                 </p>
-                <button className='px-10 py-2 z-8  rounded-md cursor-pointer switch-purpleGrad
+                <button className='
+                  px-[3.3rem] py-[0.95rem] items-center z-8 font-regular text-xs font-medium
+                  text-center rounded-sm cursor-pointer switch-purpleGrad mt-1
                   '>Ανακάλυψέ τα</button>
               </figcaption>
+              <aside className="absolute top-[23%] right-0 bg-white p-3 pb-0 rounded-l-md h-[400px] overflow-hidden
+               no-scrollbar flex flex-col z-10">
+                <div className='flex flex-col items-center rounded-md overflow-x-hidden no-scrollbar gap-3'>
+                <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                        font-extralight'>HomeAirFiber
+                       <br /> Internet 24
+                       </h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>17</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>24/2 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Εγκατάσταση</p>
+                        <h3 className='font-regular text-sm'>ΔΩΡΕΑΝ</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>STATIC IP</p>
+                        <h3 className='font-regular text-sm'>4,95€/Μήνα</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                        font-extralight'>HomeAirFiber
+                       <br /> Internet 35
+                       </h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>21</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>35/3 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Εγκατάσταση</p>
+                        <h3 className='font-regular text-sm'>ΔΩΡΕΑΝ</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>STATIC IP</p>
+                        <h3 className='font-regular text-sm'>4,95€/Μήνα</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  </div>
+                  <div className='pt-3 bg-white'></div>
+                </aside>
           </figure>
-          <div className="relative">
+          <figure className="relative ease-in-out duration-500">
             <Image 
               src="/homebanners2.jpg" 
-              alt="homebanners2" width={1900} 
+              alt="homebanners2" 
+              width={1900} 
               height={831} />
-          </div>
-          <div className="relative">
+              <figcaption className='heroDescCaption absolute top-[65%] z-9 left-36 flex flex-col text-white items-start'>
+                <h1 
+                  className='font-medium text-4xl mb-2'
+                  >Ακόμα ψάχνεις;
+                </h1>
+                <p className='font-regular text-left text-sm mb-2'>
+                Με την TRY&BUY υπηρεσία της SkyTelecom δοκιμάζεις το 
+                πρόγραμμα που σου ταιριάζει
+                    <br />
+                    εντελώς ΔΩΡΕΑΝ,  χωρίς καμία δέσμευση αγοράς!
+                </p>
+                <button className='
+                px-[2.5rem] py-[0.90rem] items-center z-8 font-regular text-xs font-medium
+                text-center rounded-sm cursor-pointer switch-purpleGrad mt-1
+                  '>Κάνε αίτηση τώρα</button>
+              </figcaption>
+              <aside className="absolute top-[23%] right-0 bg-white p-3 pb-0 rounded-l-md h-[400px] 
+                    overflow-hidden no-scrollbar flex flex-col z-10 ease-in-out duration-700">
+                <div className='flex flex-col items-center rounded-md overflow-x-hidden no-scrollbar gap-3'>
+                <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                        font-extralight'>HomeAirFiber
+                       <br /> Internet 50
+                       </h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>27</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>50/5 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Εγκατάσταση</p>
+                        <h3 className='font-regular text-sm'>ΔΩΡΕΑΝ</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>STATIC IP</p>
+                        <h3 className='font-regular text-sm'>4,95€/Μήνα</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                        font-extralight'>BusinessAirFiber
+                       <br /> Internet 24
+                       </h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>20</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>24/4 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Εγκατάσταση</p>
+                        <h3 className='font-regular text-sm'>ΔΩΡΕΑΝ</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                      font-extralight'>ProFlex 500/500</h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>
+                            Agreegated 500/500 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν λεπτά προς σταθερά</p>
+                        <h3 className='font-regular text-sm'>1000</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>
+                        100% Επιδότηση Εξοπλισμού</p>
+                        <h3 className='font-regular text-md flex flex-row gap-1 items-center'>
+                          Αξίας 
+                          <span className='relative '>
+                            1499€
+                              <div className='oblique-line transform -rotate-x-180'></div>
+                          </span>
+                        </h3>
+                      </li>
+                      
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  </div>
+                  <div className='pt-3 bg-white'></div>
+                </aside>
+          </figure>
+
+          <figure className="relative ease-in-out duration-500">
             <Image 
               src="/homebanners3.jpg" 
               alt="homebanners3" 
               width={1900} 
               height={831} />
-              
-          </div>
+              <figcaption className='heroDescCaption absolute top-[65%] z-9 left-36 flex flex-col text-white items-start'>
+                <h3 className='font-regular font-medium text-left text-sm'>ΜΟΝΟ ΓΙΑ ΕΣΕΝΑ!</h3>
+                <h1 
+                  className='font-medium text-4xl mb-2'
+                  >MESH WIFI ROUTER με 29,90€/τμχ!
+                </h1>
+                <p className='font-regular text-left text-sm mb-2'>
+                  Καλά διάβασες! Γίνε και εσύ μέλος της οικογένειας της SkyTelecom για να απολαμβάνεις
+                    <br />
+                  μοναδικά προνόμια!
+                </p>
+                <button className='px-[3.4rem] py-[0.90rem] items-center z-8 font-regular text-xs font-medium
+                 text-center rounded-sm cursor-pointer switch-purpleGrad mt-1
+                  '>Απόκτησέ το</button>
+              </figcaption>
+              <aside className='absolute top-[23%] right-0 bg-white p-3 pb-0 rounded-l-md h-[400px] overflow-hidden no-scrollbar  flex flex-col'>
+                <div className='flex flex-col items-center rounded-md overflow-x-hidden no-scrollbar gap-3'>
+              <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                      font-extralight'>HomeAirFiber
+                       <br /> Double Play 24</h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f] 
+                           font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>23</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>24/2 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>
+                          Δωρεάν λεπτά προς σταθερά</p>
+                        <h3 className='font-regular text-sm'>*Απεριόριστα</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f] 
+                        font-regular opacity-100'>Δωρεάν λεπτά προς κινητά</p>
+                        <h3 className='font-regular text-sm'>120</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f] 
+                        font-regular opacity-100'>Με Χρέωση</p>
+                        <h3 className='font-regular text-sm'>Ανά Δευτερόλεπτο</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                      font-extralight'>HomeAirFiber
+                       <br /> Double Play 35</h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li className='mb-2'>
+                        <p className='text-xs text-[#796e8f] 
+                           font-regular opacity-100'>Από</p>
+                        <h2 className='font-light text-2xl'> 
+                          <span className='text-4xl font-normal'>26</span>
+                          ,90€/το μήνα
+                        </h2>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>35/3 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>
+                          Δωρεάν λεπτά προς σταθερά</p>
+                        <h3 className='font-regular text-sm'>Απεριόριστα</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f] 
+                        font-regular opacity-100'>Δωρεάν λεπτά προς κινητά</p>
+                        <h3 className='font-regular text-sm'>120</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Δωρεάν Δοκιμή Try&Buy</p>
+                        <h3 className='font-regular text-sm'>3 ημέρες</h3>
+                      </li>
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  <Link href={'/'} 
+                        className='flex flex-col items-start bg-mainBg
+                              p-3 gap-2 text-white md:w-64 rounded-md'>
+                    <header>
+                      <h1 className='text-3xl leading-[1] 
+                      font-extralight'>Pro 300/300</h1>
+                    </header>
+                    <ul className='flex flex-col gap-1'>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>Download/Upload</p>
+                        <h3 className='font-regular text-sm'>
+                            Dedicated 300/300 Mbps</h3>
+                      </li>
+                      <li>
+                        <p className='text-xs text-[#796e8f]  font-regular opacity-100'>
+                        100% Επιδότηση Εξοπλισμού</p>
+                        <h3 className='font-regular text-md flex flex-row gap-1 items-center'>
+                          Αξίας 
+                          <span className='relative '>
+                            1499€
+                              <div className='oblique-line transform -rotate-x-180'></div>
+                          </span>
+                        </h3>
+                      </li>
+                      
+                    </ul>
+                    <button
+                      className='border border-gray-300 rounded-md py-3 w-full
+                          font-regular text-xs font-bold hover:border-transparent
+                          hoverBg ease-in-out duration-500 mt-2
+                    '>Το Θέλω!</button>
+                  </Link>
+                  </div>
+                  <div className='pt-3 bg-white z-1'></div>
+                </aside>
+          </figure>
         </Slider>
 
         <div className="absolute top-1/2 left-2 transform -translate-y-1/2">
           <div className="flex flex-col items-center gap-3">
             <div className={`rounded-full bg-cover cursor-pointer`} onClick={() => changeSlide(0)}>
-              <Image src="/heroRound.png" alt="heroRound" width={37} height={45} className="rounded-full bg-cover cursor-pointer" />
+              <Image src="/heroRound.png" alt="heroRound" width={37} height={45} className={`rounded-full bg-cover cursor-pointer `} />
             </div>
             <div className={`rounded-full bg-cover cursor-pointer`} onClick={() => changeSlide(1)}>
-              <Image src="/heroRound2.png" alt="heroRound2" width={35} height={35} className="rounded-full bg-cover cursor-pointer" />
+              <Image src="/heroRound2.png" alt="heroRound2" width={35} height={35} className={`rounded-full bg-cover cursor-pointer`} />
             </div>
             <div className={`rounded-full bg-cover cursor-pointer`}  onClick={() => changeSlide(2)}>
-              <Image src="/heroRound3.png" alt="heroRound3" width={35} height={35} className="rounded-full bg-cover cursor-pointer" />
+              <Image src="/heroRound3.png" alt="heroRound3" width={35} height={35} className={`rounded-full bg-cover cursor-pointer `} />
             </div>
           </div>
         </div>
-      </div>
+
+        
+      {/* </div> */}
     </section>
   );
 };
