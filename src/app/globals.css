@@ -34,7 +34,50 @@ body {
   outline: none;
 }
 
-.hoverBg:hover{
+.hoverLine{
+  background: #463D5B;
+  outline: none;
+}
+
+#hoverSvg{
+   fill: white;
+  } 
+  
+
+#hoverSvg:hover{
+  color: transparent;
+  background-image:   linear-gradient(90deg, #c610c6 0%, #30a6ef 100%) ; /* Define your gradient colors */
+  -webkit-background-clip: text; /* Apply the gradient to the text */
+  background-clip: text; 
+  color: linear-gradient(90deg, #c610c6 0%, #30a6ef 100%);
+}
+
+#hoverSvg stop:first-child {
+  stop-color: #c610c6; /* Adjust the color of the last stop in the gradient */
+}
+
+#hoverSvg stop:last-child {
+  stop-color: #30a6ef; /* Adjust the color of the first stop in the gradient */
+}
+
+.custom-icon{
+  fill: white; 
+}
+.custom-icon1 {
+  stroke: white; /* Set the initial color to white */
+}
+
+.custom-link:hover .custom-icon1{
+  stroke: url(#hoverSvg); 
+}
+
+
+.custom-link:hover .custom-icon{
+  fill: url(#hoverSvg); 
+}
+
+.hoverBg:hover,
+.custom-link:hover .hoverLine{
   background: var(--purple-gradient);
   border-color: var(--purple-gradient);
 }
