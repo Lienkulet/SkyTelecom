@@ -43,7 +43,6 @@ body {
    fill: white;
   } 
   
-
 #hoverSvg:hover{
   color: transparent;
   background-image:   linear-gradient(90deg, #c610c6 0%, #30a6ef 100%) ; /* Define your gradient colors */
@@ -67,16 +66,25 @@ body {
   stroke: white; /* Set the initial color to white */
 }
 
+ /* MOBILE NOT WORKING */
+/* .slick-current .custom-icon{
+  fill: url(#hoverSvg);
+}
+
+.slick-current .custom-icon1{
+  stroke: url(#hoverSvg);
+} */
+
+
 .custom-link:hover .custom-icon1{
   stroke: url(#hoverSvg); 
 }
-
-
 .custom-link:hover .custom-icon{
   fill: url(#hoverSvg); 
 }
 
 .hoverBg:hover,
+.slick-current .hoverLine,
 .custom-link:hover .hoverLine{
   background: var(--purple-gradient);
   border-color: var(--purple-gradient);
@@ -86,6 +94,13 @@ body {
   cursor: pointer;
   background: linear-gradient(90deg, #30a6ef 0%, #c610c6 100%);
   z-index: 999;
+}
+
+.programBg{
+  background: linear-gradient(to bottom right, #30a6ef 0%, #c610c6 100%);
+}
+.skewBarBg{
+  background: linear-gradient(to bottom right, #c610c6 0%, #30a6ef 100%);
 }
 
 .image-border:hover{
@@ -109,7 +124,7 @@ body {
   bottom: 3px;
   left: 1px;
   width: 100%;
-  height: 1.2px;
+  height: 2px;
   background-color: white;
   transform: rotate(-20deg);
   transform-origin: left;
@@ -214,3 +229,117 @@ body {
   border-color: transparent;
 }
 
+.bottomProgIcon3{
+  transform: translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 1s;
+}
+.activebottomProgIcon3{
+  transform: translateY(-40%) translateX(70%);
+  transform-origin: bottom left;
+  transition: transform 1s;
+}
+
+.bottomProgIcon1{
+  transform: translateY(140%);
+  transform-origin: bottom left;
+  transition: transform 0.7s;
+}
+.activebottomProgIcon1{
+  transform: translateY(-40%)  translateX(50%);
+  transform-origin: bottom left;
+  transition: transform 0.7s;
+}
+
+.bottomProgIcon2{
+  transform: translateY(70%);
+  transform-origin: bottom left;
+  transition: transform 0.7s;
+}
+.activebottomProgIcon2{
+  transform: translateY(-60%)  translateX(20%);
+  transform-origin: bottom left;
+  transition: transform 0.7s;
+}
+
+
+.topProgIcon3{
+  transform: translateY(-250%) translateX(300%);
+  transform-origin: top right !important;
+  transition: transform 0.1s;
+}
+.activeTopProgIcon3 {
+  transform: translateY(10%) translateX(260%) !important;
+  transform-origin: top right !important;
+  top: 0;
+  transition: transform 0.6s;
+}
+
+
+.topProgIcon1{
+  transform: translateY(-250%) translateX(300%);
+  transform-origin: top right !important;
+  transition: transform 0.7s;
+}
+
+.activeTopProgIcon1 {
+  transform: translateY(-140%) translateX(260%);
+  transform-origin: top right !important;
+  transition: transform 0.7s;
+}
+
+.topProgIcon2{
+  transform: translateY(-280%) translateX(400%);
+  transform-origin: top right !important;
+  transition: transform 0.7s;
+}
+
+.activeTopProgIcon2{
+  transform: translateY(-120%) translateX(350%) !important;
+  transform-origin: top right !important;
+  transition: transform 0.7s;
+}
+
+.subHero {
+  max-width: 800px !important; /* Set your desired maximum width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subHero .slick-slider{
+  max-width: 400px !important;
+}
+
+.subHero .slick-dots {
+  position: relative;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.subHero .slick-dots li {
+  margin: 0 2px;
+}
+
+.subHero .slick-dots li button {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  cursor: pointer;
+}
+
+.subHero .slick-dots li.slick-active button {
+  background: linear-gradient(to bottom, #c610c6 0%, #30a6ef 100%);
+  border: transparent;
+}
+
+.programsShadow{
+  -webkit-box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
+  -moz-box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
+  box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
+}
