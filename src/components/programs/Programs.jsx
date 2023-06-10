@@ -268,7 +268,7 @@ const Programs = () => {
 
                 {
                   progDetails.length > 0 && (
-                    <div className='md:hidden mt-36 ml-4 programsSlider'>
+                    <div className='md:hidden mt-16 ml-4 programsSlider'>
                     <Slider {...settings}>
                         <Program key={0}
                               progDetails={
@@ -295,7 +295,7 @@ const Programs = () => {
                     </div>
                   ) 
                 }
-                <Link href={'/'} className='flex flex-row justify-center items-center mt-24'>
+                <Link href={'/'} className='flex flex-row justify-center items-center mt-12 md:mt-24'>
                   <button className='purpleBorder text-center w-72 hoverBg py-4 font-medium font-regular text-sm'>
                     Δες όλα τα {activeBtn === 0? ' Home ' : `${activeBtn === 1? ' Business ' : 'Professional' }`} Προγράμματα
                   </button>

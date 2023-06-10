@@ -1,6 +1,7 @@
-import Hero from "./components/herro/Hero";
-import Programs from "./components/programs/Programs";
-import SubHero from "./components/subHero/SubHero";
+import Hero from "@/components/herro/Hero";
+import Programs from "@/components/programs/Programs";
+import SubHero from "@/components/subHero/SubHero";
+
 
 export default function Home() {
   return (

@@ -1,12 +1,10 @@
-import Footer from './components/footer/Footer'
-import Navbar from './components/navbar/Navbar'
+
+
 import './globals.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
 
 export const metadata = {
   title: 'Skytelecom',
@@ -17,15 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className='font-sans'>
-        <header>
           <Navbar />
-        </header>
-        <main>
           {children}
-        </main>
-        <footer>
           <Footer />
-        </footer>
         </body>
     </html>
   )
