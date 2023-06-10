@@ -1,12 +1,20 @@
 'use client';
 import Image from 'next/image'
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { BsPlay } from 'react-icons/bs'
 import Program from '../program/Program';
+import Slider from 'react-slick';
+import Link from 'next/link';
 
 const Programs = () => {
-  
+  const settings = {
+    dots: true,
+    arrows: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
 
   const programs = [
     //  Home
@@ -19,21 +27,15 @@ const Programs = () => {
             install: 'ΔΩΡΕΑΝ',
             ip: '4,95€/Μήνα',
             tryBuy: '3 ημέρες',
-            // landmine: 1000,
-            // mobile: 1000,
-            // equipment: 999
         },
         {
             title: 'HomeAirFiber',
             br: 'Double Play 35',
             price: 26,
             download: '35/3 Mbps',
-            // install: 'ΔΩΡΕΑΝ',
-            // ip: '4,95€/Μήνα',
             tryBuy: '3 ημέρες',
             landmine: 'Απεριόριστα',
             mobile: 120,
-            // equipment: 999
         },
         {
             title: 'HomeAirFiber',
@@ -43,9 +45,6 @@ const Programs = () => {
             install: 'ΔΩΡΕΑΝ',
             ip: '4,95€/Μήνα',
             tryBuy: '3 ημέρες',
-            // landmine: 1000,
-            // mobile: 1000,
-            // equipment: 999
         },
     ],
     //  Business
@@ -55,74 +54,44 @@ const Programs = () => {
             br: 'Internet 24',
             price: 20,
             download: '24/2 Mbps',
-            // install: 'ΔΩΡΕΑΝ',
             ip: 'ΔΩΡΕΑΝ',
             tryBuy: '3 ημέρες',
-            // landmine: 1000,
-            // mobile: 1000,
-            // equipment: 999
         },
         {
             title: 'BusinessAirFiber',
             br: 'Internet 35',
             price: 25,
             download: '35/7 Mbps',
-            // install: 'ΔΩΡΕΑΝ',
             ip: 'ΔΩΡΕΑΝ',
             tryBuy: '3 ημέρες',
-            // landmine: 1000,
-            // mobile: 1000,
-            // equipment: 999
         },
         {
             title: 'BusinessAirFiber',
             br: 'Double Play',
             price: 35,
             download: '50/10 Mbps',
-            // install: 'ΔΩΡΕΑΝ',
-            // ip: 'ΔΩΡΕΑΝ',
             tryBuy: '3 ημέρες',
             landmine: '&Απεριόριστα',
             mobile: 180,
-            // equipment: 999
         },
     ],
     // Professional
     [
         {
             title: 'ProFlex 300/300',
-            // br: 'Internet 35',
-            // price: 21,
             download: 'Agreegated 300mbps',
-            // install: 'ΔΩΡΕΑΝ',
-            // ip: '4,95€/Μήνα',
-            // tryBuy: '3 ημέρες',
             landmine: "1000'",
-            // mobile: 1000,
             equipment: 999
         },
         {
             title: 'Pro 300/300',
-            // br: 'Internet 35',
-            // price: 21,
             download: 'Agreegated 300/300 Mbps',
-            // install: 'ΔΩΡΕΑΝ',
-            // ip: '4,95€/Μήνα',
-            // tryBuy: '3 ημέρες',
-            // landmine: "1000'",
-            // mobile: 1000,
             equipment: 1499
         },
         {
             title: 'Pro 300/300',
-            // br: 'Internet 35',
-            // price: 21,
             download: 'Agreegated 1Gbps',
-            // install: 'ΔΩΡΕΑΝ',
-            // ip: '4,95€/Μήνα',
-            // tryBuy: '3 ημέρες',
             landmine: "1000'",
-            // mobile: 1000,
             equipment: 999
         },
     ],
@@ -163,7 +132,7 @@ const Programs = () => {
                     }
                       }>
             <div className='md:absolute flex flex-row items-center gap-[0.2rem] 
-            font-medium top-1/3 left-[40%] text-xl transform -skew-x-12'
+            font-medium top-1/3 left-[40%] md:text-xl text-base transform -skew-x-12'
                     >
               <BsPlay size={'2rem'} className='hidden md:flex' />
               Home
@@ -198,7 +167,7 @@ const Programs = () => {
                       }
                       }>
             <div className='md:absolute flex flex-row items-center gap-[0.2rem] 
-              font-medium top-1/3 left-[40%] transform -skew-x-12 text-xl'
+              font-medium top-1/3 left-[40%] transform -skew-x-12 md:text-xl text-base'
                     >
               <BsPlay size={'2rem'} className='hidden md:flex' />
               Business
@@ -235,7 +204,7 @@ const Programs = () => {
                       }
                       }>
             <div className='md:absolute flex flex-row items-center gap-[0.2rem] 
-            font-medium w-full top-1/3 left-[33.33%] transform -skew-x-12 text-xl'
+            font-medium w-full top-1/3 left-[33.33%] transform -skew-x-12 md:text-xl text-base'
                     >
               <BsPlay size={'2rem'} className='hidden md:flex' />
               Professional  
@@ -271,7 +240,7 @@ const Programs = () => {
         
               {
                   progDetails.length > 0 && (
-                    <div className='hidden md:flex flex-row items-center justify-center mt-30 gap-12'>
+                    <div className='hidden md:flex flex-row items-center justify-center mt-32 gap-12'>
                           <Program key={0}
                               progDetails={
                                   progDetails[0]
@@ -296,6 +265,41 @@ const Programs = () => {
                     </div>
                   )
                 }
+
+                {
+                  progDetails.length > 0 && (
+                    <div className='md:hidden mt-36 ml-4 programsSlider'>
+                    <Slider {...settings}>
+                        <Program key={0}
+                              progDetails={
+                                  progDetails[0]
+                              }
+                              middle={false}
+                              activeBtn={activeBtn === 2 ? true : false}
+                              />
+                          <Program key={1}
+                              progDetails={
+                                  progDetails[1]
+                              }
+                              middle={true}
+                              activeBtn={activeBtn === 2 ? true : false}
+                              />
+                          <Program key={2}
+                              progDetails={
+                                  progDetails[2]
+                              }
+                              middle={false}
+                              activeBtn={activeBtn === 2 ? true : false}
+                              />
+                    </Slider>
+                    </div>
+                  ) 
+                }
+                <Link href={'/'} className='flex flex-row justify-center items-center mt-24'>
+                  <button className='purpleBorder text-center w-72 hoverBg py-4 font-medium font-regular text-sm'>
+                    Δες όλα τα {activeBtn === 0? ' Home ' : `${activeBtn === 1? ' Business ' : 'Professional' }`} Προγράμματα
+                  </button>
+                </Link>
         </main>
     </section>
   )

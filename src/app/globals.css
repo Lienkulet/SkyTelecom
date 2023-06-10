@@ -23,6 +23,8 @@ body {
     background: var(--purple-gradient);
 } 
 
+
+
 .switch-purpleGrad{
   background: var(--purple-gradient);
   transition: background-color 0.3s;
@@ -43,9 +45,22 @@ body {
    fill: white;
   } 
   
+  /* .purpleBorder{
+    background-image:   linear-gradient(90deg, #c610c6 0%, #30a6ef 100%) ;
+  }
+   */
+  .purpleBorder{
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(90deg, #c610c6 0%, #30a6ef 100%);
+    border-width: 1px;
+  }
+
+
+
 #hoverSvg:hover{
   color: transparent;
-  background-image:   linear-gradient(90deg, #c610c6 0%, #30a6ef 100%) ; /* Define your gradient colors */
+   /* Define your gradient colors */
   -webkit-background-clip: text; /* Apply the gradient to the text */
   background-clip: text; 
   color: linear-gradient(90deg, #c610c6 0%, #30a6ef 100%);
@@ -266,7 +281,7 @@ body {
 .topProgIcon3{
   transform: translateY(-250%) translateX(300%);
   transform-origin: top right !important;
-  transition: transform 0.1s;
+  transition: transform 0.6s;
 }
 .activeTopProgIcon3 {
   transform: translateY(10%) translateX(260%) !important;
@@ -310,6 +325,7 @@ body {
   max-width: 400px !important;
 }
 
+.programsSlider .slick-dots,
 .subHero .slick-dots {
   position: relative;
   bottom: -20px;
@@ -320,8 +336,24 @@ body {
   padding: 0;
 }
 
+.programsSlider .slick-dots{
+  bottom: -5px !important;
+}
+
+.programsSlider .slick-dots li{
+  margin: 14px 2px;
+}
 .subHero .slick-dots li {
   margin: 0 2px;
+}
+
+.programsSlider .slick-dots li button{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  cursor: pointer;
 }
 
 .subHero .slick-dots li button {
@@ -337,6 +369,13 @@ body {
   background: linear-gradient(to bottom, #c610c6 0%, #30a6ef 100%);
   border: transparent;
 }
+
+.programsSlider .slick-dots li.slick-active button{
+  background: linear-gradient(to bottom, #c610c6 0%, #30a6ef 100%);
+  border: transparent;
+}
+
+
 
 .programsShadow{
   -webkit-box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);

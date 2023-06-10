@@ -104,9 +104,9 @@ const SubHero = () => {
 
         <div className='md:hidden flex items-center justify-center py-4 mt-11 subHero'>
         <Slider {...settings}>
-        <div>
+        <div className='mx-4'>
         <Link href={'/'} className='flex flex-col items-center justify-center text-white text-center
-                    font-normal text-base gap-1 min-w-[245px] min-h-[27px] cursor-default custom-link'>
+                    font-normal text-base gap-1 min-w-[145px] min-h-[27px] cursor-default custom-link'>
 
                 <svg width="0" height="0">
                 <linearGradient id="hoverSvg" x1="100%" y1="100%" x2="0%" y2="0%">

@@ -6,8 +6,8 @@ const Program = ({progDetails, middle, activeBtn}) => {
     return (
        
         <Link href={'/'}
-            className={`flex flex-col ${activeBtn? ' min-h-[20rem] ' : ' min-h-[32rem] '} items-start ${middle? ' programBg ' : ' bg-[#281140] '}
-                            p-3 gap-2 text-white md:w-80 rounded-md`}>
+            className={`flex flex-col ${activeBtn? ' min-h-[20rem] ' : ' md:min-h-[32rem] min-h-[34rem] '} items-start ${middle? ' programBg ' : ' bg-[#281140] '}
+                            p-3 gap-2 text-white w-72  md:w-80 rounded-md`}>
             <header>
                 <h1 className='text-4xl leading-[1]
                                             font-extralight'>{progDetails?.title}
