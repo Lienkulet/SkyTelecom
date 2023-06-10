@@ -296,7 +296,8 @@ const Programs = () => {
                   ) 
                 }
                 <Link href={'/'} className='flex flex-row justify-center items-center mt-12 md:mt-24'>
-                  <button className='purpleBorder text-center w-72 hoverBg py-4 font-medium font-regular text-sm'>
+                  <button className='purpleBorder text-center w-72 hoverBg py-4 font-medium font-regular text-sm
+                            duration-700 ease-in-out'>
                     Δες όλα τα {activeBtn === 0? ' Home ' : `${activeBtn === 1? ' Business ' : 'Professional' }`} Προγράμματα
                   </button>
                 </Link>

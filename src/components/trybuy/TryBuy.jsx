@@ -42,8 +42,8 @@ const TryBuy = () => {
                  <br /> ενδιαφέρει, χωρίς καμία δέσμευση αγοράς.
             </p>
             <button className='px-[2rem] py-[1.2rem] items-center z-8 font-regular
-                   text-base font-medium purpleBorder
-                 text-center rounded-sm cursor-pointer md:switch-purpleGrad mt-4'>Κάντε αίτηση τώρα</button>
+                   text-base font-medium sm:purpleBorder
+                 text-center rounded-sm cursor-pointer switch-purpleGrad mt-4'>Κάντε αίτηση τώρα</button>
             </div>
         </div>
     </section>

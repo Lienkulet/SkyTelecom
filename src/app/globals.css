@@ -387,3 +387,29 @@ body {
   -moz-box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
   box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
 }
+
+.smartHome{
+  @apply border border-[#c610c6] text-[#c610c6] hover:text-white hover:bg-[#c610c6];
+  @apply duration-700 ease-in-out;
+}
+
+.smartHomeLink:hover .smartHome{
+  @apply text-white bg-[#c610c6];
+}
+
+.smartImg{
+  content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9;
+    opacity: 0.17;
+    background: rgb(198,16,198);
+    background: radial-gradient(circle, rgba(198,16,198,1) 0%, rgba(198,16,198,0) 51.9%);
+    z-index: 11;
+}
