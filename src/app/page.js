@@ -1,6 +1,7 @@
 import Hero from "@/components/herro/Hero";
 import Programs from "@/components/programs/Programs";
 import SubHero from "@/components/subHero/SubHero";
+import TryBuy from "@/components/trybuy/TryBuy";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <SubHero />
       <Programs />
+      <TryBuy />
     </main>
   )
 }

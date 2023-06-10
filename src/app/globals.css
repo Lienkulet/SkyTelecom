@@ -6,10 +6,15 @@
   --purple-gradient: linear-gradient(90deg, #c610c6 0%, #30a6ef 100%);
   --border-gradient-color-1: "#8B5CF6";
   --border-gradient-color-2: "#EC4899";
+  --mainBg: #12062D
 }
 
 body {
-  background: #12062D;
+  background: var(--mainBg)
+}
+
+.mainBg{
+  background: var(--mainBg);
 }
 
 .nav-option:hover {
