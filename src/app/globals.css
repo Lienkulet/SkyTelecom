@@ -361,6 +361,17 @@ body {
   cursor: pointer;
 }
 
+
+
+.testimonialsSlider .slick-dots li button{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  cursor: pointer
+}
+
 .subHero .slick-dots li button {
   width: 5px;
   height: 5px;
@@ -375,12 +386,16 @@ body {
   border: transparent;
 }
 
+.testimonialsSlider .slick-dots li.slick-active button,
 .programsSlider .slick-dots li.slick-active button{
   background: linear-gradient(to bottom, #c610c6 0%, #30a6ef 100%);
   border: transparent;
 }
 
-
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: transparent !important;
+}
 
 .programsShadow{
   -webkit-box-shadow: 10px 10px 185px -54px rgba(187,83,252,1);
@@ -412,4 +427,8 @@ body {
     background: rgb(198,16,198);
     background: radial-gradient(circle, rgba(198,16,198,1) 0%, rgba(198,16,198,0) 51.9%);
     z-index: 11;
+}
+
+.testimonial{
+  fill: url(#hoverSvg);
 }

@@ -1,3 +1,4 @@
+import Blogs from "@/components/blogs/Blogs";
 import CallService from "@/components/callService/CallService";
 import CoverMap from "@/components/coverMap/CoverMap";
 import Hero from "@/components/herro/Hero";
@@ -19,6 +20,7 @@ export default function Home() {
       <CallService />
       <CoverMap />
       <Testimonials />
+      <Blogs />
     </main>
   )
 }

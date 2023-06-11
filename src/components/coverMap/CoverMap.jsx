@@ -4,7 +4,7 @@ import React from 'react'
 const CoverMap = () => {
   return (
     <section className='relative flex flex-col md:flex-row gap-28 items-start justify-center md:justify-start
-                 text-white py-20 px-6 md:px-96'>
+                 text-white py-20 pb-60 px-6 md:px-96'>
         <div className='hidden md:flex flex-col gap-6 z-10'>
             <h2 className='font-regular text-4xl '>Κάλυψη</h2>
             <p className='font-regular max-w-sm'>Το δίκτυό της SkyTelecom προσφέρει πληθυσμιακή κάλυψη που
