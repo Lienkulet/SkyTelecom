@@ -13,7 +13,7 @@ const BlogCard = ({ blog: { image, title, summary, date } }) => {
             />
         </div>
         <figcaption className='flex flex-col gap-2'>
-            <h1 className='font-semibold text-black text-2xl'>{title}</h1>
+            <h1 className='font-semibold md:text-black text-white  text-2xl'>{title}</h1>
             <p className='text-lg font-light'>{summary}</p>
             <time className='text-sm font-light'>{date}</time>    
         </figcaption>

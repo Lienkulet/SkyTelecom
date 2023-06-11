@@ -513,7 +513,7 @@ const Hero = () => {
         </Slider>
       </div>
 
-        <div className="md:flex hidden absolute top-1/2 left-3 transform -translate-y-1/2">
+        <div className="md:flex hidden absolute top-1/2 left-3 transform -translate-y-1/2 z-30">
           <div className="flex flex-col items-center gap-3">
             <div className={`rounded-full bg-cover cursor-pointer`} onClick={() => changeSlide(0)}>
               <Image src="/heroRound.png" alt="heroRound" width={46} height={45} className={`rounded-full bg-cover cursor-pointer `} />
