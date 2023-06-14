@@ -238,33 +238,18 @@ const Programs = () => {
             </div>
         </div>
         
+        <div className='hidden md:flex flex-row items-center justify-center mt-32 gap-12'>
               {
-                  progDetails.length > 0 && (
-                    <div className='hidden md:flex flex-row items-center justify-center mt-32 gap-12'>
-                          <Program key={0}
-                              progDetails={
-                                  progDetails[0]
-                              }
-                              middle={false}
+                programs.length > 0 && programs[activeBtn].map((program, index) => (   
+                  <Program key={0}
+                              progDetails={program}
+                              middle={index == 1 ? true : false}
                               activeBtn={activeBtn === 2 ? true : false}
                               />
-                          <Program key={1}
-                              progDetails={
-                                  progDetails[1]
-                              }
-                              middle={true}
-                              activeBtn={activeBtn === 2 ? true : false}
-                              />
-                          <Program key={2}
-                              progDetails={
-                                  progDetails[2]
-                              }
-                              middle={false}
-                              activeBtn={activeBtn === 2 ? true : false}
-                              />
-                    </div>
-                  )
-                }
+                              )
+                          )
+              }
+        </div>
 
                 {
                   progDetails.length > 0 && (

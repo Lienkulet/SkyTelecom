@@ -4,9 +4,12 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 import { BiSearch } from 'react-icons/bi'
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
+import SideNav from '../sideNav/SideNav';
 
 const Navbar = () => {
     const [showSubMenu, setShowSubMenu] = useState(false);
+    const [showSideMenu, setShowSideMenu] = useState(false);
+    
     const spanRef = useRef(null);
     const ulRef = useRef(null);
 
@@ -86,21 +89,22 @@ const Navbar = () => {
                             </span>
                         </li>
                     <li>
-                        <Link href={'/tryandbuy'}
+                        <Link href={'/https://skytelecom.gr/tryandbuy/'}
                             className='hover:text-[#30A6EF] pl-24 ease-in-out duration-200'>Try&buy</Link>
                     </li>
                     <li>
-                        <Link href={'/company/store-locator'}
+                        <Link href={'https://skytelecom.gr/company/store-locator/'}
                             className='hover:text-[#30A6EF] ease-in-out duration-200'>Δίκτυο</Link>
                     </li>
                     <li>
-                        <Link href={'/online-pliromi-logariasmou-checkout'} 
+                        <Link href={'https://skytelecom.gr/online-pliromi-logariasmou-checkout/'} 
                             className='text-[#30A6EF] ease-in-out duration-200'>Online Πληρωμή</Link>
                     </li>
                 </ul>      
             </div>
-            <HiOutlineMenuAlt4 size={'2rem'} />
+            <HiOutlineMenuAlt4 size={'2rem'} className='cursor-pointer' onClick={() => setShowSideMenu(prev => !prev)} />
         </nav>
+        {showSideMenu && <SideNav />}
         { showSubMenu &&
         <ul className='bg-white px-8 py-10 flex flex-row items-center justify-between gap-6
             transition-all 
